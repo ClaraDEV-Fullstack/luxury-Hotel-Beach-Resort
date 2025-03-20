@@ -1,0 +1,421 @@
+/* RoomsPage.css */
+.hero-section {
+    background-image: url('https://mauritiusattractions.com/content/images/category-page-images/hotel-day-packages.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Prevent horizontal scrolling */
+    padding: 1rem; /* Add padding to ensure content doesn't touch edges */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .hero-section {
+        background-size: cover; /* Keep cover for better responsiveness */
+        background-position: top center; /* Adjust to top center for better focus */
+        min-height: 80vh; /* Reduce height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 60vh; /* Further reduce height for very small screens */
+    }
+}
+
+
+/* Filters Section */
+.filters-section {
+    padding: 2rem;
+    background: #f9f9f9;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0; /* Add a subtle border for separation */
+}
+
+.filters-section h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem); /* Responsive font size */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1f2937; /* Dark gray for better readability */
+}
+
+.filter-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 1200px; /* Limit max width for better readability */
+    margin: 0 auto; /* Center the filter group */
+}
+
+.filter-input {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 auto; /* Allow inputs to grow and shrink */
+    min-width: 200px; /* Minimum width for better usability */
+}
+
+.filter-input:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filter-input input,
+.filter-input select {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+    width: 100%; /* Ensure inputs take full width */
+    color: #333; /* Darker text for better readability */
+}
+
+.filter-input input::placeholder,
+.filter-input select::placeholder {
+    color: #999; /* Lighter placeholder text */
+}
+
+.filter-input select {
+    appearance: none; /* Remove default arrow */
+    background: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 0.75rem center/12px 12px; /* Custom dropdown arrow */
+    padding-right: 2rem; /* Space for custom arrow */
+}
+
+.price-range {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.price-range label {
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 500; /* Slightly bolder label */
+}
+
+.range-inputs {
+    display: flex;
+    gap: 1rem;
+    width: 100%; /* Ensure full width */
+}
+
+.range-inputs input {
+    flex: 1; /* Equal width for both inputs */
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: border-color 0.3s ease;
+}
+
+.range-inputs input:focus {
+    border-color: #1c01d0; /* Highlight focus state */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .filter-group {
+        gap: 1rem; /* Reduce gap for smaller screens */
+    }
+
+    .filter-input {
+        min-width: 150px; /* Smaller minimum width for mobile */
+        padding: 0.5rem 1rem; /* Adjust padding */
+    }
+
+    .price-range {
+        width: 100%; /* Full width for price range on mobile */
+    }
+
+    .range-inputs {
+        flex-direction: column; /* Stack range inputs vertically on mobile */
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .filters-section {
+        padding: 1.5rem 1rem; /* Adjust padding for very small screens */
+    }
+
+    .filter-input {
+        width: 100%; /* Full width for inputs on very small screens */
+    }
+}
+
+
+
+/* Room Grid */
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+    gap: 52px; /* Increase gap between images */
+    max-width: 1400px;
+    margin: 0 auto; /* Center the grid */
+}
+
+.room-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.room-card img {
+    width: 100%;
+    height: 400px; /* Increase image height */
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.room-card-content {
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover .room-card-content {
+    transform: translateY(0);
+}
+
+.room-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.room-card p {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 16px;
+}
+
+.room-card button {
+    width: 100%;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.room-card button:hover {
+    opacity: 0.9;
+}
+
+/* Modern Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.pagination button {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #4b5563;
+    padding: 8px 16px;
+    margin: 0 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination button:hover {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.pagination button.active {
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .filters-section {
+        padding: 20px;
+    }
+
+    .filter-group {
+        gap: 12px;
+    }
+
+    .room-grid {
+        gap: 40px;
+    }
+
+    .room-card img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .room-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    }
+
+    .filters-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .room-card img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rooms-page {
+        padding: 30px 15px;
+    }
+
+    .filters-section {
+        padding: 16px;
+    }
+
+    .filter-group {
+        gap: 10px;
+    }
+
+    .filter-group input,
+    .filter-group select {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .room-grid {
+        grid-template-columns: 1fr; /* 1 image per row */
+        gap: 30px;
+    }
+
+    .room-card img {
+        height: 250px;
+    }
+
+    .pagination button {
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .filters-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .room-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .room-card p {
+        font-size: 0.8rem;
+    }
+
+    .room-card button {
+        padding: 12px;
+    }
+}
+
+
+
+/* Filters Section */
+.filters-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filters-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-input:hover {
+    background-color: #e0e0e0;
+}
+
+.filter-icon {
+    color: #666;
+}
+
+.filter-input input,
+.filter-input select {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 14px;
+    color: #333;
+}
+
+.filter-input input:focus,
+.filter-input select:focus {
+    outline: none;
+}
+
+.price-range {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price-range label {
+    font-size: 14px;
+    color: #555;
+}
+
+.range-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.range-inputs input[type="range"] {
+    flex: 1;
+}

@@ -1,0 +1,145 @@
+/* General Footer Styles */
+.custom-footer {
+    background: #01193a; /* Dark background */
+    color: #ffffff; /* Light text */
+    margin-top: 150px;
+    min-height: 40vh; /* Use min-height instead of height for better flexibility */
+    font-family: 'Inter', sans-serif; /* Use a modern font */
+    width: 100%; /* Ensure the footer spans the full width */
+    padding: 2rem 1rem; /* Add padding for better spacing on smaller screens */
+}
+
+.spacer {
+    height: 4rem; /* Add space before the footer */
+    background: transparent; /* Transparent spacer */
+}
+
+.custom-footer-inner {
+    max-width: 1500px; /* Center the content */
+    margin: 0 auto; /* Center align */
+    padding: 1rem; /* Adjust padding for better spacing */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns for desktop */
+    gap: 2rem; /* Space between columns */
+}
+
+.custom-footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Adjust spacing between elements */
+}
+
+/* Titles */
+.custom-footer-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #458afb; /* Blue highlight */
+}
+
+/* Text */
+.custom-footer-text {
+    color: #f1f3f8; /* Subtle gray */
+    line-height: 1.6; /* Enhanced line height for readability */
+}
+
+/* Lists */
+.custom-footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.custom-footer-link {
+    text-decoration: none;
+    color: #f9fbfd; /* Subtle gray */
+    transition: color 0.3s ease;
+}
+
+.custom-footer-link:hover {
+    color: #3b82f6; /* Blue highlight */
+}
+
+/* Inputs */
+.custom-footer-input {
+    width: 100%;
+    padding: 0.75rem; /* Increased padding for better touch targets */
+    border: 1px solid #2605fb;
+    border-radius: 0.375rem;
+    background: #1f2937;
+    color: #d1d5db;
+    transition: border-color 0.3s ease;
+}
+
+.custom-footer-input:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* Buttons */
+.custom-footer-button {
+    width: 100%;
+    padding: 0.75rem; /* Increased padding for better touch targets */
+    border: none;
+    border-radius: 0.375rem;
+    background: #3b82f6;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.custom-footer-button:hover {
+    background: #2563eb;
+}
+
+/* Copyright */
+.custom-footer-copyright {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #374151;
+    color: #fda606; /* Slightly darker gray */
+    line-height: 1.6; /* Enhanced line height for readability */
+    grid-column: span 4; /* Ensure copyright spans all columns */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .custom-footer-inner {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    }
+
+    .custom-footer-copyright {
+        grid-column: span 2; /* Adjust grid span for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-footer-inner {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .custom-footer-copyright {
+        grid-column: span 1; /* Reset grid span for smaller screens */
+    }
+
+    .custom-footer {
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-footer {
+        margin-top: 100px; /* Reduce margin-top for very small screens */
+        min-height: 50vh; /* Increase min-height for better content fit */
+    }
+
+    .custom-footer-inner {
+        padding: 0.5rem; /* Reduce padding for very small screens */
+    }
+
+    .custom-footer-title {
+        font-size: 0.875rem; /* Adjust font size for very small screens */
+    }
+
+    .custom-footer-text {
+        font-size: 0.875rem; /* Adjust font size for very small screens */
+    }
+}

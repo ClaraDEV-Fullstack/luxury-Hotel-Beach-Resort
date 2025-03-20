@@ -1,0 +1,212 @@
+/* General Section Styling */
+.about-us-section {
+    background: linear-gradient(135deg, #152b68, #3b82f6);
+    color: #ffffff;
+    padding: 80px 5%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Title Styling */
+.about-us-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* Subtitle & Text */
+.about-us-subtitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #facc15;
+    text-transform: uppercase;
+}
+
+.about-us-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    opacity: 0.9;
+}
+
+/* Grid Layout */
+.about-us-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+/* Left Column - Description */
+.about-us-description {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+/* Right Column - Images */
+.about-us-images {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-us-image {
+    width: 100%;
+    max-width: 400vh;
+    height: 50vh;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0.2, 0, 0.4, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.about-us-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Call-to-Action Buttons */
+.about-us-actions {
+    margin-top: 20px;
+}
+
+.about-us-action {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background: #facc15;
+    color: #1e3a8a;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.about-us-action:hover {
+    background: #ffffff;
+    color: #1e3a8a;
+}
+
+/* Vision & Mission Section */
+.about-us-vision-mission {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.about-us-vision,
+.about-us-mission {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.about-us-vision-title,
+.about-us-mission-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #facc15;
+}
+
+.about-us-vision-text,
+.about-us-mission-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Call to Action Buttons */
+.about-us-cta {
+    margin-top: 40px;
+}
+
+.about-us-cta-button {
+    padding: 14px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.about-us-cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-us-grid {
+        flex-direction: column;
+    }
+
+    .about-us-images {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .about-us-description {
+        text-align: center;
+    }
+}

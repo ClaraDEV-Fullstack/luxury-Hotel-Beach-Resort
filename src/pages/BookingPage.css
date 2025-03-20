@@ -1,0 +1,196 @@
+/* Wanderfully Styled Booking Page */
+.booking-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f3f7ff, #e3eafc);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.room-image-container {
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.room-image-container:hover {
+    transform: scale(1.02);
+}
+
+.room-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.booking-form-container {
+    width: 100%;
+    max-width: 750px;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.booking-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group .react-datepicker-wrapper {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group .react-datepicker-wrapper:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.addons-section {
+    margin-top: 35px;
+}
+
+.addons-section h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.addons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+}
+
+.addon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.addon-item.selected {
+    border-color: #007bff;
+    background: #e3f2fd;
+    transform: scale(1.05);
+}
+
+.addon-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.addon-item svg {
+    font-size: 1.7rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.addon-item span {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    font-weight: 500;
+}
+
+.total-price {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.total-price h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.total-price p {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.confirm-button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.confirm-button:hover {
+    background: linear-gradient(135deg, #0056b3, #003d82);
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .room-image {
+        height: 280px;
+    }
+
+    .booking-form-container {
+        padding: 25px;
+    }
+
+    .addons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
