@@ -15,6 +15,11 @@ import { ProfilePage } from './pages/ProfilePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { PrivateRoute } from './components/PrivateRoute'; // Import PrivateRoute
 import { Footer } from './pages/Footer.jsx'; // Import Footer
+import Terms from './pages/Terms.jsx';
+import Privacy from './pages/Privacy.jsx';
+import Security from './pages/Security.jsx';
+
+
 
 function App() {
     return (
@@ -34,6 +39,9 @@ function App() {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/security" element={<Security />} />
 
                 {/* Protected Routes */}
                 <Route

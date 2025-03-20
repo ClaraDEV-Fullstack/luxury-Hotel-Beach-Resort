@@ -37,13 +37,10 @@ export function Footer() {
                         <li><a href="/" className="custom-footer-link hover:text-blue-400 transition-colors">Home</a></li>
                         <li><a href="/rooms" className="custom-footer-link hover:text-blue-400 transition-colors">Rooms</a></li>
                         <li><a href="/offers" className="custom-footer-link hover:text-blue-400 transition-colors">Offers</a></li>
-                        <li><a href="/offers" className="custom-footer-link hover:text-blue-400 transition-colors">Contact</a></li>
-                        <li><a href="/offers" className="custom-footer-link hover:text-blue-400 transition-colors">Signup</a></li>
-                        <li><a href="/offers" className="custom-footer-link hover:text-blue-400 transition-colors">Login</a></li>
-
+                        <li><a href="/contact" className="custom-footer-link hover:text-blue-400 transition-colors">Contact</a></li>
+                        <li><a href="/signup" className="custom-footer-link hover:text-blue-400 transition-colors">Signup</a></li>
+                        <li><a href="/login" className="custom-footer-link hover:text-blue-400 transition-colors">Login</a></li>
                     </ul>
-
-
                 </motion.div>
 
                 {/* Column 3: Contact Info */}
@@ -90,12 +87,67 @@ export function Footer() {
                 </motion.div>
             </div>
 
+            {/* Legal Links Section */}
+            <div
+                className="custom-footer-legal container mx-auto px-4 mt-8"
+                style={{
+                    textAlign: "center",
+                    padding: "25px 0",
+                    borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+                    background: "linear-gradient(to right, #1a1a2e, #16213e)",
+                }}
+            >
+                <motion.ul
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    className="custom-footer-legal-list"
+                    style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        justifyContent: "center",
+                        gap: "30px", // Increased spacing between links
+                        padding: "15px 0",
+                        listStyle: "none",
+                    }}
+                >
+                    {[
+                        { label: "Terms of Service", link: "/terms" },
+                        { label: "Privacy Policy", link: "/privacy" },
+                        { label: "Security Terms", link: "/security" },
+                    ].map((item, index) => (
+                        <li key={index} style={{ padding: "8px 15px" }}> {/* Added padding for better spacing */}
+                            <a
+                                href={item.link}
+                                className="custom-footer-legal-link"
+                                style={{
+                                    fontSize: "1rem", // Increased font size for readability
+                                    fontWeight: "500",
+                                    color: "rgba(255, 255, 255, 0.8)",
+                                    textDecoration: "none",
+                                    position: "relative",
+                                    transition: "color 0.3s ease-in-out",
+                                    padding: "10px 15px", // Added padding to improve clickability
+                                    display: "inline-block",
+                                }}
+                                onMouseOver={(e) => (e.target.style.color = "#4f9cf9")}
+                                onMouseOut={(e) => (e.target.style.color = "rgba(255, 255, 255, 0.8)")}
+                            >
+                                {item.label}
+                            </a>
+                        </li>
+                    ))}
+                </motion.ul>
+            </div>
+
+
             {/* Copyright Section */}
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.8 }}
+                transition={{ duration: 0.5, delay: 1 }}
                 className="custom-footer-copyright mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-500"
             >
                 <p>© 2025 Azure Shores Resort. All rights reserved.</p>
