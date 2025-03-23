@@ -61,7 +61,7 @@
     border-radius: 50rem;
     font-size: 2rem;
     cursor: pointer;
-    transform: translateY(-10rem);
+    transform: translateY(-150px);
     transition: background-color 0.3s ease, transform 0.3s ease;
     min-width: 150px; /* Ensure buttons have a minimum width */
 }

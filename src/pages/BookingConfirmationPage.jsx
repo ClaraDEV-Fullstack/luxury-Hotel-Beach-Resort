@@ -83,8 +83,8 @@ export function BookingConfirmationPage() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: 'easeOut' }}
                 >
-                    <h1 className="hero-title">Welcome, {username}!</h1>
-                    <p className="hero-subtitle">
+
+                    <p className="hero-subtitle font-weight= bolder">
                         You've successfully reached the booking confirmation page. Here, you can review your booking
                         details, complete your payment, and download your confirmation.
                     </p>
